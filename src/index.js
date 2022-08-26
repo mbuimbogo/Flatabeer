@@ -1,7 +1,7 @@
 const apiHost =  "http://localhost:3000"
 
 function getAndLoadAllBeers(){
-    fetch(`${apiHost}/beers`).then(resp=>resp.json()).then(beers=>{
+    fetch(`${apiHost}/beers`).then(response=>response.json()).then(beers=>{
         document.getElementById('beer-list').innerHTML = beers
         .map(beer=>`<li onClick="getAndLoadBeerDetails(${beer.id})">${beer.name}</li>`)
         .join('');
